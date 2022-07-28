@@ -33,6 +33,7 @@ As requisições por id seguem o padrão url base/método/{id}
 | Código | Descrição |
 |---|---|
 | `200` | Requisição executada com sucesso (success).|
+| `201` | Requisição executada com sucesso (created).|
 | `400` | Erros de validação ou os campos informados não existem no sistema.|
 | `401` | Dados de acesso inválidos.|
 | `404` | Registro pesquisado não encontrado (Not found).|
@@ -51,7 +52,7 @@ A Api utiliza do Spring Security Basic Authenticate para acesso autorizado aos e
 
 Para acessar os métodos você poderá utilizar do usuário cadastrado para testes com client_id`  e ` client_secret` listados abaixo:
 
-username: userTest
+username: user
 
 password: 2022
 

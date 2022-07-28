@@ -2,8 +2,7 @@
 
 # API REST utilizando Spring Boot
 
-A Sales simula um sistema de vendas completo acessado por meio de requisições rest mapeadas por módulos sendo eles Clientes, Produtos e pedidos. 
-
+A Sales simula um sistema de vendas completo acessado por meio de requisições rest mapeadas por módulos.
 Recursos disponíveis para acesso via API:
 
 * [**Clientes**]("/api/customer")
@@ -45,9 +44,9 @@ As requisições por id seguem o padrão url base/método/{id}
 
 # Group Autenticação - Autenticação básica
 
-A Api utiliza do Spring Security Basic Authenticate para acesso autorizado conforme criação de usuário para acesso aos endpoints.
+A Api utiliza do Spring Security Basic Authenticate para acesso autorizado aos endpoints conforme criação de usuário, para requisições via navegador web uma página de login será exibida, para requisições via Postman é necessária a autenticação dentro do software na aba "Authenticate".
 
-Para acessar os métodos através do Basic Authenticate você poderá utilizar do usuário cadastrado para testes com client_id` e `client_secret` listados abaixo:
+Para acessar os métodos você poderá utilizar do usuário cadastrado para testes com client_id` e `client_secret` listados abaixo:
 
 username: userTest
 password: 250709
@@ -55,4 +54,4 @@ password: 250709
 
 # Documentação Swagger
 
-A Api possui uma documentação personalizada com o swagger disponível na url: http://localhost:8070/swagger-ui/index.html que pode ser acessada com as credenciais de teste listadas no módulo anterior
+Com o servidor embarcado startado, a documentação personalizada da Api com o Swagger ficará disponível na url: http://localhost:8070/swagger-ui/index.html para ser acessada após autenticação com as credenciais de teste listadas no módulo anterior. Na documentação estão listados todos os métodos detalhadamente com seus parâmetros requeridos.

@@ -43,7 +43,7 @@ public class CustomerController {
         return customerInteface.findAll();
     }
 
-    @GetMapping(path ="list/{id}")
+    @GetMapping(path ="/list/{id}")
     @ApiOperation("Lista de cliente por id")
     @ApiResponse(code = 201, message = "Cliente encontrado")
     public Object listById(@PathVariable Integer id){
@@ -57,7 +57,7 @@ public class CustomerController {
         return customer;
     }
 
-    @DeleteMapping(path = "delete/{id}" )
+    @DeleteMapping(path = "/delete/{id}" )
     @ApiOperation("Deleta cliente por id")
     public void deleteCustomer(@PathVariable Integer id){
     }

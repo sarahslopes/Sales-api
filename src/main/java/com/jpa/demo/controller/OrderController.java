@@ -41,7 +41,7 @@ public class OrderController{
         return orderInteface.findAll(); 
     }
 
-    @GetMapping(path = "list/{id}")
+    @GetMapping(path = "/list/{id}")
     @ApiOperation("Lista pedidos por id")
     public Optional<Order> listById(@PathVariable Integer id) {
          return orderInteface.findById(id);

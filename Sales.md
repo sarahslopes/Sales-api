@@ -41,14 +41,18 @@ As requisições por id seguem o padrão url base/método/{id}
 | `422` | Dados informados estão fora do escopo definido para o campo.|
 | `429` | Número máximo de requisições atingido. (*aguarde alguns segundos e tente novamente*)|
 
+# Configuração banco de dados
+
+A api utiliza do banco de dados MySql, para utilizar o seu banco com usuário local basta  clonar o repositório na sua máquina, localizar o arquivo "application.properties" e mudar o user, nome do banco e senha. É necessário citado na classe de configuração esteja vazio para que o hibernate possa fazer a persistência dos dados pré-configurados na aplicação.
 
 # Group Autenticação - Autenticação básica
 
 A Api utiliza do Spring Security Basic Authenticate para acesso autorizado aos endpoints conforme criação de usuário, para requisições via navegador web uma página de login será exibida, para requisições via Postman é necessária a autenticação dentro do software na aba "Authenticate".
 
-Para acessar os métodos você poderá utilizar do usuário cadastrado para testes com client_id` e `client_secret` listados abaixo:
+Para acessar os métodos você poderá utilizar do usuário cadastrado para testes com client_id`  e ` client_secret` listados abaixo:
 
 username: userTest
+
 password: 250709
 
 

@@ -7,7 +7,7 @@ Recursos disponíveis para acesso via API:
 
 * [**Clientes**]("/api/customer")
 * [**Produtos**]("/api/product")
-* [**Pedidios**]("/api/order")
+* [**Pedidos**]("/api/order")
 
 
 ## Métodos

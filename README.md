@@ -58,4 +58,10 @@ password: 250709
 
 # Documentação Swagger
 
-Com o servidor embarcado startado, a documentação personalizada da Api com o Swagger ficará disponível na url: http://localhost:8070/swagger-ui/index.html para ser acessada após autenticação com as credenciais de teste listadas no módulo anterior. Na documentação estão listados todos os métodos detalhadamente com seus parâmetros requeridos.
+Com o servidor embarcado startado, a documentação personalizada da Api com o Swagger ficará disponível na url: http://localhost:8070/swagger-ui/index.html para ser acessada após autenticação com as credenciais de teste listadas no módulo anterior. Na documentação estão listados todos os métodos detalhadamente com seus parâmetros requeridos bem como na Figura 1 abaixo.
+
+
+![Screenshot 2022-07-28 at 10-47-05 Swagger UI](https://user-images.githubusercontent.com/92373290/181521506-be81485e-8f76-4d00-bba7-225b2a255930.png)
+(Figura 1 -Página da documentação) 
+
+

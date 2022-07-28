@@ -40,20 +40,20 @@ public class ProductController {
         return repo.findAll();
     }
 
-    @GetMapping(path ="list/{id}")
+    @GetMapping(path ="/list/{id}")
     @ApiOperation("Lista produto por id")
     public Object listById(@PathVariable Integer id){
         return repo.findById(id);
     }
 
-    @PutMapping(path = "update/{id}")
+    @PutMapping(path = "/update/{id}")
     @ApiOperation("Atualiza produto por id")
     public Product updateCustomer(@Valid Product product){
         saveCustomer(product);
         return product;
     }
 
-    @DeleteMapping(path = "delete/{id}" )
+    @DeleteMapping(path = "/delete/{id}" )
     @ApiOperation("Deleta produto por id")
     public void deleteCustomer(@PathVariable Integer id){
         repo.deleteById(id);

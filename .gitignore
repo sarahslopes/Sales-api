@@ -78,7 +78,3 @@ nb-configuration.xml
 .vscode/
 .code-workspace
 
-##############################
-## OS X
-##############################
-.DS_Store

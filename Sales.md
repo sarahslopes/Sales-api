@@ -1,7 +1,5 @@
 # Sales-api
 
-# Sales-api
-
 # API REST utilizando Spring Boot
 
 A Sales simula um sistema de vendas completo acessado por meio de requisições rest mapeadas por módulos sendo eles Clientes, Produtos e pedidos. 

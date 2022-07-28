@@ -1,10 +1,12 @@
 package com.jpa.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.jpa.demo.model.Customer;
 import com.jpa.demo.repository.CustomerInteface;
@@ -31,6 +35,7 @@ public class CustomerController {
     @Autowired CustomerInteface customerInteface;
 
     @PostMapping("/register")
+    @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Cadastra cliente")
     public @ResponseBody Customer saveCustomer(@Valid Customer customer){
         customerInteface.save(customer);
@@ -47,10 +52,17 @@ public class CustomerController {
     @ApiOperation("Lista de cliente por id")
     @ApiResponse(code = 201, message = "Cliente encontrado")
     public Object listById(@PathVariable Integer id){
-        return customerInteface.findById(id);
+        Optional<Customer> customer = customerInteface.findById(id);
+
+        if(customer.isPresent()){
+            return customer.get();
+        }
+
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado");
     }
 
     @PutMapping(path = "/update/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiOperation("Atualiza cliente apartir do id")
     public Customer updateCustomer(@Valid Customer customer){
         saveCustomer(customer);
@@ -58,6 +70,7 @@ public class CustomerController {
     }
 
     @DeleteMapping(path = "/delete/{id}" )
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiOperation("Deleta cliente por id")
     public void deleteCustomer(@PathVariable Integer id){
     }
@@ -65,7 +78,14 @@ public class CustomerController {
     @GetMapping("/list/name")
     @ApiOperation("Lista cliente por nome")
     public List<Customer> listByname(@PathVariable String name){
-        return customerInteface.findByName(name);
+        try {
+            List<Customer> customer = customerInteface.findByName(name);
+            return customer;
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado");
+        }
+
+    
     }
 
 }
